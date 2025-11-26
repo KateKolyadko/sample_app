@@ -83,6 +83,7 @@ GEM
       execjs (~> 2)
     base64 (0.3.0)
     bcrypt (3.1.18)
+    bcrypt_pbkdf (1.1.1)
     bcrypt_pbkdf (1.1.1-x64-mingw-ucrt)
     bigdecimal (3.3.1)
     bindex (0.8.1)
@@ -124,6 +125,7 @@ GEM
       tzinfo
     execjs (2.10.0)
     ffi (1.17.2-x64-mingw-ucrt)
+    ffi (1.17.2-x86_64-linux-gnu)
     formatador (1.2.3)
       reline
     fugit (1.12.1)
@@ -196,7 +198,7 @@ GEM
       logger
     mini_mime (1.1.5)
     minitest (5.15.0)
-    minitest-reporters (1.5.0)
+    minitest-reporters (1.7.1)
       ansi
       builder
       minitest (>= 5.0)
@@ -220,6 +222,8 @@ GEM
     nio4r (2.7.5)
     nokogiri (1.18.10-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.18.10-x86_64-linux-gnu)
+      racc (~> 1.4)
     notiffany (0.1.3)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -229,6 +233,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.6.2-x64-mingw-ucrt)
+    pg (1.6.2-x86_64-linux)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -383,6 +388,7 @@ GEM
     stringio (3.1.8)
     thor (1.4.0)
     thruster (0.1.16)
+    thruster (0.1.16-x86_64-linux)
     tilt (2.6.1)
     timeout (0.4.4)
     tsort (0.2.0)
@@ -398,7 +404,6 @@ GEM
     unicode-emoji (4.1.0)
     uri (1.1.1)
     useragent (0.16.11)
-    wdm (0.2.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -419,6 +424,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt (= 3.1.18)
@@ -435,7 +441,7 @@ DEPENDENCIES
   jbuilder
   kamal
   minitest (= 5.15.0)
-  minitest-reporters (= 1.5.0)
+  minitest-reporters (= 1.7.1)
   pg
   puma (>= 5.0)
   rails (~> 8.1.1)
@@ -451,7 +457,6 @@ DEPENDENCIES
   thruster
   turbo-rails
   tzinfo-data
-  wdm (>= 0.1.0)
   web-console
   webdrivers (= 5.0.0)
 
