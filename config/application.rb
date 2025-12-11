@@ -10,6 +10,7 @@ module SampleApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.1
+    config.active_storage.variant_processor = :mini_magick
     config.assets.check_precompiled_asset = false
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
