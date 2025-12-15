@@ -9,7 +9,7 @@ gem "sprockets-rails", "~> 3.4"
 #gem "propshaft", "~> 0.8.0" 
 gem "active_storage_validations", "0.9.8"
 gem "bootstrap-sass", "~> 3.4.1"
-gem "faker",           "2.21.0"
+gem "faker",           "3.5.3"
 gem "will_paginate",            "3.3.1"
 gem "bootstrap-will_paginate",  "1.0.0"
 
