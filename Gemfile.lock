@@ -207,7 +207,7 @@ GEM
       logger
     mini_mime (1.1.5)
     minitest (5.15.0)
-    minitest-reporters (1.5.0)
+    minitest-reporters (1.7.1)
       ansi
       builder
       minitest (>= 5.0)
@@ -454,7 +454,7 @@ DEPENDENCIES
   jbuilder
   kamal
   minitest (= 5.15.0)
-  minitest-reporters (= 1.5.0)
+  minitest-reporters (= 1.7.1)
   pg
   puma (>= 5.0)
   rails (~> 8.1.1)
