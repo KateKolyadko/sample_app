@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/KateKolyadko/sample_app.git" }
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.1"
-gem "bcrypt",          "3.1.18"
+gem "bcrypt",          "3.1.20"
 gem "sassc-rails"
 gem "sprockets-rails", "~> 3.4"
 #gem "propshaft", "~> 0.8.0" 
