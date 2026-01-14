@@ -1,17 +1,20 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
-git_source(:github) { |repo| "https://github.com/KateKolyadko/sample_app.git" }
+git_source(:github) { |_repo| "https://github.com/KateKolyadko/sample_app.git" }
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "bcrypt", "3.1.18"
 gem "rails", "~> 8.1.1"
-gem "bcrypt",          "3.1.18"
 gem "sassc-rails"
 gem "sprockets-rails", "~> 3.4"
-#gem "propshaft", "~> 0.8.0" 
+gem "standard"
+# gem "propshaft", "~> 0.8.0"
 gem "active_storage_validations", "0.9.8"
 gem "bootstrap-sass", "~> 3.4.1"
-gem "faker",           "2.21.0"
-gem "will_paginate",            "3.3.1"
-gem "bootstrap-will_paginate",  "1.0.0"
+gem "bootstrap-will_paginate", "1.0.0"
+gem "faker", "2.21.0"
+gem "will_paginate", "3.3.1"
 
 
 
@@ -33,12 +36,12 @@ gem "jbuilder"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "tzinfo-data", platforms: %i[windows jruby]
 
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
+gem "solid_cable"
 gem "solid_cache"
 gem "solid_queue"
-gem "solid_cable"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -54,16 +57,13 @@ gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
 
   # Audits gems for known security defects (use config/bundler-audit.yml to ignore issues)
   gem "bundler-audit", require: false
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
-
-  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
-  gem "rubocop-rails-omakase", require: false
 end
 
 group :development do
@@ -72,12 +72,12 @@ group :development do
 end
 
 group :test do
-  gem "capybara",                 "3.37.1"
-  gem "selenium-webdriver",       "4.2.0"
-  gem "webdrivers",               "5.0.0"
+  gem "capybara", "3.37.1"
+  gem "guard", "2.18.0"
+  gem "guard-minitest", "2.4.6"
+  gem "minitest", "5.15.0"
+  gem "minitest-reporters", "1.5.0"
   gem "rails-controller-testing", "1.0.5"
-  gem "minitest",                 "5.15.0"
-  gem "minitest-reporters",       "1.5.0"
-  gem "guard",                    "2.18.0"
-  gem "guard-minitest",           "2.4.6"
+  gem "selenium-webdriver", "4.2.0"
+  gem "webdrivers", "5.0.0"
 end

@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
-                                         :following, :followers]
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :logged_in_user, only: %i[index edit update destroy
+    following followers]
+  before_action :correct_user, only: %i[edit update]
+  before_action :admin_user, only: :destroy
 
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
-    redirect_to root_url and return unless  @user.activated?
+    redirect_to root_url and return unless @user.activated?
   end
 
   def new
@@ -31,7 +33,7 @@ class UsersController < ApplicationController
       flash[:info] = "Please check your email to activate your account."
       redirect_to root_url
     else
-      render 'new', status: :unprocessable_entity
+      render "new", status: :unprocessable_entity
     end
   end
 
@@ -45,38 +47,37 @@ class UsersController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to @user
     else
-      render 'edit', status: :unprocessable_entity
+      render "edit", status: :unprocessable_entity
     end
   end
 
   def following
-      @title = "Following"
-      @user  = User.find(params[:id])
-      @users = @user.following.paginate(page: params[:page])
-      render 'show_follow', status: :unprocessable_entity
-   end
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render "show_follow", status: :unprocessable_entity
+  end
 
-   def followers
-      @title = "Followers"
-      @user  = User.find(params[:id])
-      @users = @user.followers.paginate(page: params[:page])
-      render 'show_follow', status: :unprocessable_entity
-   end
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render "show_follow", status: :unprocessable_entity
+  end
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password,
+      :password_confirmation)
+  end
 
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url, status: :see_other) unless current_user?(@user)
-    end
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url, status: :see_other) unless current_user?(@user)
+  end
 
-    def admin_user
-      redirect_to(root_url, status: :see_other) unless current_user.admin?
-    end
-
+  def admin_user
+    redirect_to(root_url, status: :see_other) unless current_user.admin?
+  end
 end

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
-
   def setup
     @base_title = "Ruby on Rails Tutorial Sample App"
   end
@@ -9,7 +10,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get root" do
     get root_path
     assert_response :success
-    assert_select "title", "#{@base_title}"
+    assert_select "title", @base_title.to_s
   end
 
   test "should get help" do

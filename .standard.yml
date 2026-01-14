@@ -1,0 +1,13 @@
+﻿fix: true
+parallel: false
+format: progress
+
+rubocop:
+  Layout/EndOfLine:
+    Enabled: false
+  Style/SafeNavigation:
+    Enabled: false
+  Style/GlobalStdStream:
+    Enabled: false
+  Style/RedundantInterpolation:
+    Enabled: false

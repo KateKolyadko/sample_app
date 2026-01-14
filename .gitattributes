@@ -1,9 +1,23 @@
-# See https://git-scm.com/docs/gitattributes for more about git attribute files.
+* text=auto eol=lf
 
-# Mark the database schema as having been generated.
-db/schema.rb linguist-generated
+*.rb text eol=lf
+*.rake text eol=lf
+*.ru text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.erb text eol=lf
+*.haml text eol=lf
+*.slim text eol=lf
+*.coffee text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
 
-# Mark any vendored files as having been vendored.
-vendor/* linguist-vendored
-config/credentials/*.yml.enc diff=rails_credentials
-config/credentials.yml.enc diff=rails_credentials
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
+*.zip binary

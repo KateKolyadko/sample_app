@@ -1,10 +1,12 @@
-require_relative 'config/environment'
+# frozen_string_literal: true
+
+require_relative "config/environment"
 
 user = User.find_by(email: "michael@example.com")
 
 if user
   puts "ДО изменений: #{user.name}"
- 
+
   if user.update(
     name: "Catherine",
     password: "foobar",
